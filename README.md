@@ -7,7 +7,7 @@
 ## Installation and running app with npm
 ``` bash
 
-cd API-with-nodejs
+cd node-api-with-postgres-DB
 
 # install dependencies
 npm install 
@@ -19,7 +19,7 @@ npm start
 ## Installation and running app with yarn
 ``` bash
 
-cd bucketlist-API
+cd node-api-with-postgres-DB
 
 # install dependencies
 yarn 
