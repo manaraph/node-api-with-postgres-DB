@@ -8,9 +8,9 @@ URL Endpoint	|               HTTP Request   | Resource Accessed | Access Type|
 /   |      GET	| Display home with api info | public
 /users   |      GET	| Retrieve all users| public
 /users	  |     POST	| Create new user | public
-/users/<id>            |  	GET	    | Retrieve a user by ID | public
-/users/<id>            |  	PUT	    | Retrieve a user by ID | public
-/users/<id>            |  	DELETE	    | Delete a user by ID | public
+/users/<user_id>            |  	GET	    | Retrieve a user by ID | public
+/users/<user_id>            |  	PUT	    | Retrieve a user by ID | public
+/users/<user_id>            |  	DELETE	    | Delete a user by ID | public
 
 ## Credits 
 - Adapted from [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8) by Tania Rascia
