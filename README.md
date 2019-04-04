@@ -1,12 +1,16 @@
 # node-api-with-postgres-DB
 
-# API routes
-- GET — / | displayHome()
-- GET — /users | getUsers()
-- GET — /users/:id | getUserById()
-- POST — users | createUser()
-- PUT — /users/:id | updateUser()
-- DELETE — /users/:id | deleteUser()
+## API Endpoints
+You can use postman or even curl to reach out to the following api endpoints:
 
-# Credits 
-- Based on [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8)
+URL Endpoint	|               HTTP Request   | Resource Accessed | Access Type|
+----------------|-----------------|-------------|------------------
+/   |      GET	| Display home with api info | public
+/users   |      GET	| Retrieve all users| public
+/users	  |     POST	| Create new user | public
+/users/<id>            |  	GET	    | Retrieve a user by ID | public
+/users/<id>            |  	PUT	    | Retrieve a user by ID | public
+/users/<id>            |  	DELETE	    | Delete a user by ID | public
+
+## Credits 
+- Adapted from [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8) by Tania Rascia
