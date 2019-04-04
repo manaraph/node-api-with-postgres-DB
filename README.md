@@ -5,6 +5,7 @@
 > git clone https://github.com/manaraph/node-api-with-postgres-DB.git
 
 ## Setting up PostgreSQL database using the command line
+``` bash
 > psql -U postgres                                  # Use the default user `postgres` Then enter your password for postgres
 > \conninfo                                         # View your connection information
 > CREATE ROLE me WITH LOGIN PASSWORD 'password';    # Create a new user `me` with with password `password`
@@ -23,6 +24,7 @@
 > INSERT INTO users (name, email)
   VALUES ('Jerry', 'jerry@example.com'), 
   ('George', 'george@example.com');                 # Insert 2 entries to users
+```
 
 ## Installation and running app with npm
 ``` bash
