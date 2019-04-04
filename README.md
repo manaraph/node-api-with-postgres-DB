@@ -1,4 +1,5 @@
 # node-api-with-postgres-DB
+> A simple node API with express connected to a postgreSQL database
 
 ## API Endpoints
 You can use postman or even curl to reach out to the following api endpoints:
