@@ -69,13 +69,16 @@ URL Endpoint	|               HTTP Request   | Resource Accessed | Access Type|
 - See details of the fix above on this [link](https://stackoverflow.com/questions/25044010/running-curl-on-64-bit-windows).
 
 ``` bash
-# Display home with api info
+# Display home with api info 
+# This can also view on your browser by visiting the link  => http://localhost:3000/
 > curl -v http://localhost:3000/
 
 # GET => Retrieve all users
+# This can also view on your browser by visiting the link  => http://localhost:3000/users
 > curl -v http://localhost:3000/users
 
 # GET => Retrieve a users with id 1
+# This can also view on your browser by visiting the link  => http://localhost:3000/users/1
 > curl -v http://localhost:3000/users/1
 
 # POST => Create a new user
