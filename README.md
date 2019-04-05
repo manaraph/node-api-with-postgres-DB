@@ -68,6 +68,8 @@ URL Endpoint	|               HTTP Request   | Resource Accessed | Access Type|
 
 - See details of the fix above on this [link](https://stackoverflow.com/questions/25044010/running-curl-on-64-bit-windows).
 
+- Ensure that your server is running and connection has been established with the postgres database before running these request.
+
 ``` bash
 # Display home with api info 
 # This can also view on your browser by visiting the link  => http://localhost:3000/
