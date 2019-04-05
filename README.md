@@ -63,15 +63,29 @@ URL Endpoint	|               HTTP Request   | Resource Accessed | Access Type|
 /users/<user_id>            |  	DELETE	    | Delete a user by ID | public
 
 ## Testing API with curl
+- If you are running this command from powershell and you encounter the error `A positional parameter cannot be found that accepts argument` run the command below to fix it. 
+> Remove-item alias:curl
+
+- See details of the fix above on this [link](https://stackoverflow.com/questions/25044010/running-curl-on-64-bit-windows).
+
 ``` bash
 # Display home with api info
 > curl -v http://localhost:3000/
 
-# GET all users
+# GET => Retrieve all users
 > curl -v http://localhost:3000/users
 
-# GET a users with id 1
+# GET => Retrieve a users with id 1
 > curl -v http://localhost:3000/users/1
+
+# POST => Create a new user
+> curl --data "name=m4&email=m4@example.com" http://localhost:3000/users
+
+# PUT => Update user with ID 1
+> curl -X PUT -d "name=Kramer" -d "email=kramer@example.com" http://localhost:3000/users/1
+
+# DELETE => Delete user with ID 1
+> curl -X "DELETE" http://localhost:3000/users/1
 
 ```
 

@@ -27,15 +27,18 @@ const getUsersByID = (request, response) => {
     } )
 }
 
-const createUser = (request, response) => {    
+const createUser = (request, response) => { 
+    console.log('Creating user');
+       
     const{name, email} = request.body
 
     pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {
         if(error){
             throw error
         }
-        response.status(201).send(`User added with ID: ${result}`)
+        response.status(201).send(`User added with ID: ${results}`)
     })
+    console.log('User created');
 }
 
 const updateUser = (request, response) => {
@@ -55,9 +58,10 @@ const updateUser = (request, response) => {
 }
 
 const deleteUser = (request, response) => {
-    const id = parseInt(request.param.id)
+    const id = parseInt(request.params.id)
 
     pool.query('DELETE FROM users WHERE id = $1', [id], (error, results) => {
+        
         if(error){
             throw error
         }
