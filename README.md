@@ -95,4 +95,6 @@ URL Endpoint	|               HTTP Request   | Resource Accessed | Access Type|
 ```
 
 ## Credits 
-- Adapted from [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8) by Tania Rascia
+Adapted from;
+- [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8) by Tania Rascia
+- [Importing csv into PostgreSQL table](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/) 
