@@ -6,3 +6,16 @@ const pool = new Pool({
     password: 'password',
     port: 5432,
 })
+
+const getData = (request, response) => {
+    pool.query('SELECT * FROM jsondt', (error, results) => {
+        if(error){
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+}
+
+module.exports = {
+    getData,
+}
