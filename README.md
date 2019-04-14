@@ -2,7 +2,7 @@
 > A simple node API with express connected to a postgreSQL database
 
 ## Cloning Repository
-> git clone https://github.com/manaraph/node-api-with-postgres-DB.git
+> git clone https://gitlab.com/ehealth4everyone-codingforlife/postgresdb-node-api.git
 
 ## Setting up PostgreSQL database using the command line
 ``` bash
@@ -98,3 +98,4 @@ URL Endpoint	|               HTTP Request   | Resource Accessed | Access Type|
 Adapted from:
 - [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8) by Tania Rascia
 - [Importing csv into PostgreSQL table](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/) 
+- [PostgreSQL as NoSQL with Data Validation](https://www.endpoint.com/blog/2013/06/03/postgresql-as-nosql-with-data-validation)

@@ -1,4 +1,4 @@
-const db = require('./sql/queries')
+const db = require('./src/sql')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
