@@ -36,7 +36,7 @@
 > \du                                                               # Lists all roles/users
 > \q                                                                # Exit from the default session
 > psql -d postgres -U me                                            # Use the user me, and login using the password: `password`
-> CREATE DATABASE api;                                            # Create a database API
+> CREATE DATABASE api;                                              # Create a database API
 > \list                                                             # Lists all avaialble database
 > \c api  
 > create table jsondt( data JSON);
@@ -45,7 +45,11 @@
 #     ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,
 #     COMPANY,DATE_REGISTERED,LAST_UPDATED) 
 #     FROM data;                                                    #Inserts the json data from data table as arrays
-> INSERT INTO jsondt(data) select json_build_object( 'id',ID,'name',NAME,'address',ADDRESS,'phone',PHONE_NUMBER, 'email',EMAIL,'company',COMPANY,'registered',DATE_REGISTERED,'updated',LAST_UPDATED) from data;                              #Inserts the json data from data table as arrays
+
+> INSERT INTO jsondt(data) 
+select json_build_object( 'id',ID,'name',NAME,'address',ADDRESS,
+'phone',PHONE_NUMBER, 'email',EMAIL,'company',COMPANY,
+'registered',DATE_REGISTERED,'updated',LAST_UPDATED) from data;     #Inserts the json data from data table as arrays
 > select * from jsondt                                              # View all data on jsondt table
 ```
 
