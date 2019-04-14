@@ -27,6 +27,27 @@
 > create table data(ID VARCHAR(100),NAME VARCHAR(50),ADDRESS VARCHAR(100),PHONE_NUMBER VARCHAR(100),EMAIL VARCHAR(100),COMPANY VARCHAR(100),DATE_REGISTERED VARCHAR(50),LAST_UPDATED VARCHAR(50))
 > \copy data(ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,COMPANY,DATE_REGISTERED,LAST_UPDATED) from '.\src\data\data.csv' delimiter ',' csv header;
 ```
+## Setting up the noSQL Database
+``` bash
+> psql -U postgres                                                  # Use the default user `postgres` Then enter your password for postgres
+> \conninfo                                                         # View your connection information
+> CREATE ROLE me WITH LOGIN PASSWORD 'password';                    # Create a new user `me` with with password `password`
+> ALTER ROLE me CREATEDB;                                           # Give user `me` access to create databases
+> \du                                                               # Lists all roles/users
+> \q                                                                # Exit from the default session
+> psql -d postgres -U me                                            # Use the user me, and login using the password: `password`
+> CREATE DATABASE api;                                            # Create a database API
+> \list                                                             # Lists all avaialble database
+> \c api  
+> create table jsondt( data JSON);
+# > INSERT INTO jsondt(data) 
+#     select json_build_array(
+#     ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,
+#     COMPANY,DATE_REGISTERED,LAST_UPDATED) 
+#     FROM data;                                                    #Inserts the json data from data table as arrays
+> INSERT INTO jsondt(data) select json_build_object( 'id',ID,'name',NAME,'address',ADDRESS,'phone',PHONE_NUMBER, 'email',EMAIL,'company',COMPANY,'registered',DATE_REGISTERED,'updated',LAST_UPDATED) from data;                              #Inserts the json data from data table as arrays
+> select * from jsondt                                              # View all data on jsondt table
+```
 
 ## Installation and running app with npm
 ``` bash
