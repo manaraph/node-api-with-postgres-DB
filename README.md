@@ -35,12 +35,16 @@
     );                                              
 # Insert 2 entries to users
 > INSERT INTO users (name, email)
-  VALUES ('Jerry', 'jerry@example.com'), 
-  ('George', 'george@example.com');                 
+    VALUES ('Jerry', 'jerry@example.com'), 
+    ('George', 'george@example.com');                 
 # Create table data 
-> CREATE TABLE data(ID VARCHAR(100),NAME VARCHAR(50),ADDRESS VARCHAR(100),PHONE_NUMBER VARCHAR(100),EMAIL VARCHAR(100),COMPANY VARCHAR(100),DATE_REGISTERED VARCHAR(50),LAST_UPDATED VARCHAR(50))
+> CREATE TABLE data(ID VARCHAR(100), NAME VARCHAR(50), ADDRESS VARCHAR(100), 
+    PHONE_NUMBER VARCHAR(100), EMAIL VARCHAR(100), COMPANY VARCHAR(100), 
+    DATE_REGISTERED VARCHAR(50), LAST_UPDATED VARCHAR(50))
 # Import data from `.\src\data\data.csv` to our data table
-> \COPY data(ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,COMPANY,DATE_REGISTERED,LAST_UPDATED) from '.\src\data\data.csv' delimiter ',' csv header;
+> \COPY data(ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,COMPANY,DATE_REGISTERED,LAST_UPDATED) 
+    from '.\src\data\data.csv' delimiter ',' csv header;
+    
 ```
 ## Setting up the noSQL Database
 ``` bash
