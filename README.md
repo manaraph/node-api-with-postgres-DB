@@ -12,7 +12,7 @@
 > ALTER ROLE me CREATEDB;                           # Give user `me` access to create databases
 > \du                                               # Lists all roles/users
 > \q                                                # Exit from the default session
-> psql -d postgres -U me                            # Use the user me, and login using the password: `password`
+> psql -d postgres -U me                            # Connect as user me, and login using the password: `password`
 > CREATE DATABASE api;                              # Create a database API
 > \list                                             # Lists all avaialble database
 > \c api                                            # connect to the database `api`
@@ -24,6 +24,8 @@
 > INSERT INTO users (name, email)
   VALUES ('Jerry', 'jerry@example.com'), 
   ('George', 'george@example.com');                 # Insert 2 entries to users
+> create table data(ID VARCHAR(100),NAME VARCHAR(50),ADDRESS VARCHAR(100),PHONE_NUMBER VARCHAR(100),EMAIL VARCHAR(100),COMPANY VARCHAR(100),DATE_REGISTERED VARCHAR(50),LAST_UPDATED VARCHAR(50))
+> \copy data(ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,COMPANY,DATE_REGISTERED,LAST_UPDATED) from '.\src\data\data.csv' delimiter ',' csv header;
 ```
 
 ## Installation and running app with npm
