@@ -2,7 +2,7 @@
 > A simple node API with express connected to a postgreSQL database
 
 ## Cloning Repository
-> git clone https://gitlab.com/ehealth4everyone-codingforlife/postgresdb-node-api.git
+> git clone https://github.com/manaraph/node-api-with-postgres-DB.git
 
 ## Setting up PostgreSQL database using the command line
 ``` bash
