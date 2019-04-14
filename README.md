@@ -6,51 +6,62 @@
 
 ## Setting up PostgreSQL database using the command line
 ``` bash
-> psql -U postgres                                  # Use the default user `postgres` Then enter your password for postgres
-> \conninfo                                         # View your connection information
-> CREATE ROLE me WITH LOGIN PASSWORD 'password';    # Create a new user `me` with with password `password`
-> ALTER ROLE me CREATEDB;                           # Give user `me` access to create databases
-> \du                                               # Lists all roles/users
-> \q                                                # Exit from the default session
-> psql -d postgres -U me                            # Connect as user me, and login using the password: `password`
-> CREATE DATABASE api;                              # Create a database API
-> \list                                             # Lists all avaialble database
-> \c api                                            # connect to the database `api`
-> api=> CREATE TABLE users (           
+
+# Use the default user `postgres` Then enter your password for postgres
+> psql -U postgres                                  
+# View your connection information
+> \conninfo                                         
+# Create a new user `me` with with password `password`
+> CREATE ROLE me WITH LOGIN PASSWORD 'password';    
+# Give user `me` access to create databases
+> ALTER ROLE me CREATEDB;                           
+# Lists all roles/users
+> \du                                               
+# Exit from the default session
+> \q                                                
+# Connect as user me, and login using the password: `password`
+> psql -d postgres -U me                            
+# Create a database `api`
+> CREATE DATABASE api;                              
+# Lists all avaialble database
+> \list                                             
+# connect to the database `api`
+> \c api                                            
+# Connected to `api=>` Create table users with two field and auto-incrementing primary id
+> CREATE TABLE users (           
     ID SERIAL PRIMARY KEY,
     name VARCHAR(30),
     email VARCHAR(30)
-    );                                              # Create table users with two field and auto-incrementing primary id
+    );                                              
+# Insert 2 entries to users
 > INSERT INTO users (name, email)
   VALUES ('Jerry', 'jerry@example.com'), 
-  ('George', 'george@example.com');                 # Insert 2 entries to users
+  ('George', 'george@example.com');                 
+# Create table data 
 > CREATE TABLE data(ID VARCHAR(100),NAME VARCHAR(50),ADDRESS VARCHAR(100),PHONE_NUMBER VARCHAR(100),EMAIL VARCHAR(100),COMPANY VARCHAR(100),DATE_REGISTERED VARCHAR(50),LAST_UPDATED VARCHAR(50))
+# Import data from `.\src\data\data.csv` to our data table
 > \COPY data(ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,COMPANY,DATE_REGISTERED,LAST_UPDATED) from '.\src\data\data.csv' delimiter ',' csv header;
 ```
 ## Setting up the noSQL Database
 ``` bash
-> psql -U postgres                                                  # Use the default user `postgres` Then enter your password for postgres
-> \conninfo                                                         # View your connection information
-> CREATE ROLE me WITH LOGIN PASSWORD 'password';                    # Create a new user `me` with with password `password`
-> ALTER ROLE me CREATEDB;                                           # Give user `me` access to create databases
-> \du                                                               # Lists all roles/users
-> \q                                                                # Exit from the default session
-> psql -d postgres -U me                                            # Use the user me, and login using the password: `password`
-> CREATE DATABASE api;                                              # Create a database API
-> \list                                                             # Lists all avaialble database
-> \c api  
+# Create json data table `jsondt`
 > CREATE TABLE jsondt( data JSON);
+
+##Inserts the json data from data table as arrays
 # > INSERT INTO jsondt(data) 
 #     select json_build_array(
 #     ID,NAME,ADDRESS,PHONE_NUMBER,EMAIL,
 #     COMPANY,DATE_REGISTERED,LAST_UPDATED) 
-#     FROM data;                                                    #Inserts the json data from data table as arrays
+#     FROM data;                                
 
+#Inserts the json data from data table as arrays
 > INSERT INTO jsondt(data) 
 SELECT json_build_object( 'id',ID,'name',NAME,'address',ADDRESS,
 'phone',PHONE_NUMBER, 'email',EMAIL,'company',COMPANY,
-'registered',DATE_REGISTERED,'updated',LAST_UPDATED) from data;     #Inserts the json data from data table as arrays
-> SELECT * FROM jsondt                                              # View all data on jsondt table
+'registered',DATE_REGISTERED,'updated',LAST_UPDATED) from data;     
+
+# View all data on jsondt table
+> SELECT * FROM jsondt                                              
 ```
 
 ## Installation and running app with npm
